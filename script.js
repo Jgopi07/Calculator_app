@@ -49,24 +49,32 @@ document.addEventListener("keydown", function (event) {
     let key = event.key;
 
     if (!isNaN(key) || key === ".") {
-        event.preventDefault(); // Prevent default behavior
-        appendNumber(key); // Append number
+        event.preventDefault();
+        appendNumber(key);
     } else if ("+-*/%".includes(key)) {
-        event.preventDefault(); // Prevent default behavior
-        appendOperator(key); // Append operator
+        event.preventDefault();
+        appendOperator(key);
     } else if (key === "Enter") {
-        event.preventDefault(); // Prevent default form submission
-        calculateResult(); // Calculate result
+        event.preventDefault();
+        calculateResult();
     } else if (key === "Backspace") {
-        event.preventDefault(); // Prevent default behavior
-        backspace(); // Delete last character
+        event.preventDefault();
+        backspace();
     } else if (key.toLowerCase() === "c") {
-        event.preventDefault(); // Prevent default behavior
-        clearDisplay(); // Clear input field
+        event.preventDefault();
+        clearDisplay();
+    } else if (key === "ArrowLeft" || key === "ArrowRight") {
+        return;
     } else {
-        event.preventDefault(); // Block all other key inputs
+        event.preventDefault();
     }
 });
+
+// Function to set cursor position
+function setCursorPosition(position) {
+    display.setSelectionRange(position, position);
+    display.focus();
+}
 
 // Keep the input box focused
 display.addEventListener("blur", function () {
@@ -87,4 +95,3 @@ function calculateResult() {
         display.value = "Error";
     }
 }
-
