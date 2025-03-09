@@ -1,5 +1,4 @@
-<script>
-       let display = document.getElementById("display");
+let display = document.getElementById("display");
 
 // Ensure input box is focused on load
 window.onload = function () {
@@ -89,7 +88,3 @@ function calculateResult() {
     }
 }
 
-
-
-
-    </script>
