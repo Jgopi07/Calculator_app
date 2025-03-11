@@ -63,7 +63,6 @@ button:hover {
     filter: brightness(1.2);
 }
 
-/* Responsive styles */
 @media (max-width: 400px) {
     .calculator {
         padding: 15px;
@@ -74,7 +73,6 @@ button:hover {
         font-size: 1.2rem;
     }
 }
-
 
 #live-result {
     color: white;
